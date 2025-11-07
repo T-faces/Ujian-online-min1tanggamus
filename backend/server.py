@@ -437,23 +437,6 @@ async def submit_exam(exam_id: str, submission: ExamSubmission, current_user: di
     
     return {"score": total_score, "total_points": student_exam['total_points']}
 
-@api_router.get("/exams/history", response_model=List[StudentExam])
-async def get_exam_history(current_user: dict = Depends(get_current_user)):
-    if current_user['role'] == 'student':
-        query = {"student_id": current_user['user_id']}
-    else:
-        query = {}
-    
-    exams = await db.student_exams.find(query, {"_id": 0}).sort("started_at", -1).to_list(1000)
-    
-    for e in exams:
-        if isinstance(e.get('started_at'), str):
-            e['started_at'] = datetime.fromisoformat(e['started_at'])
-        if isinstance(e.get('submitted_at'), str):
-            e['submitted_at'] = datetime.fromisoformat(e['submitted_at'])
-    
-    return exams
-
 @api_router.get("/exams/{exam_id}/results")
 async def get_exam_results(exam_id: str, current_user: dict = Depends(get_admin_user)):
     results = await db.student_exams.find({"exam_id": exam_id}, {"_id": 0}).to_list(1000)
