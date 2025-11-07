@@ -10,7 +10,7 @@ const LandingPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center animate-fadeIn">
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 mb-6 animate-bounce-slow" data-testid="landing-title">
-              Ujian Online SD/MI
+              Ujian Online MIN 1 Tanggamus
             </h1>
             <p className="text-lg sm:text-xl text-gray-700 mb-8 max-w-2xl mx-auto" data-testid="landing-subtitle">
               Platform ujian online yang menyenangkan untuk siswa SD/MI.
@@ -90,7 +90,7 @@ const LandingPage = () => {
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-8 mt-16">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <p>© 2024 Ujian Online SD/MI. Dibuat dengan ❤️ untuk pendidikan Indonesia</p>
+          <p>© 205 Ujian Online MINSATA. Dibuat dengan ❤️ untuk pendidikan Indonesia</p>
         </div>
       </footer>
     </div>
